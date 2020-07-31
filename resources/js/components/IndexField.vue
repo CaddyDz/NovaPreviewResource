@@ -6,7 +6,9 @@
 			</div>
 
 			<tooltip-content slot="content">
-				<img :src="image" :alt="__('Photo')" />
+				<template v-if="image !== undefined">
+					<img :src="image" :alt="__('Photo')" />
+				</template>
 				<ul class="list-reset">
 					<li v-for="option in value" class="mb-1" :key="option">
 						<span
