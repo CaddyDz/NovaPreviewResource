@@ -16,5 +16,8 @@
     },
     "dependencies": {
         "vue": "^2.5.0"
+    },
+    "engines": {
+        "node": "12.x"
     }
 }
