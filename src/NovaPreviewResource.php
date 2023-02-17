@@ -44,7 +44,6 @@ class NovaPreviewResource extends Field
 	 */
 	public function options($options)
 	{
-		info($options);
 		if (is_callable($options)) {
 			$options = $options();
 		}
