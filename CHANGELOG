@@ -3,6 +3,7 @@
 ## 1.0.0 - 2023-02-19
 - Support for Laravel Nova 4
 - Added option to set image preview width
+- Added "No value" text option
 - Reduced script size: 5.5 KiB
 - Removed logging
 - Require at least Node.js 12
