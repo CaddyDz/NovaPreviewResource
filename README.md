@@ -20,5 +20,6 @@ NovaPreviewResource::make(__('Preview'))
 		__('Key') => $this->value,
 		__('Foo') => $this->bar,
 		__('Bar') => $this->baz,
-	]),
+	])
+	->noValueText('No options available'), // Optional
 ```

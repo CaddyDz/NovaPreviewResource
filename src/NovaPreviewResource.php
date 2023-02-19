@@ -23,13 +23,20 @@ class NovaPreviewResource extends Field
 	public $textAlign = 'center';
 
 	/**
+	 * The text to be used when there are no values to show.
+	 *
+	 * @var string
+	 */
+	public string $noValueText = 'No Data';
+
+	/**
 	 * Set the image for the preview.
 	 *
 	 * @param string image path
 	 *
 	 * @return $this
 	 */
-	public function image($path): NovaPreviewResource
+	public function image(string $path): NovaPreviewResource
 	{
 		return $this->withMeta([
 			'image' => $path,
@@ -43,10 +50,23 @@ class NovaPreviewResource extends Field
 	 *
 	 * @return $this
 	 */
-	public function width($width)
+	public function width(int $width)
 	{
 		return $this->withMeta([
 			'width' => $width,
+		]);
+	}
+
+	/**
+	 * Set the text to be used when there are no booleans to show.
+	 *
+	 * @param string $text
+	 * @return $this
+	 */
+	public function noValueText(string $text): NovaPreviewResource
+	{
+		return $this->withMeta([
+			'noValueText' => $text,
 		]);
 	}
 
