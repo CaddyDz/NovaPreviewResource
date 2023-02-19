@@ -1,0 +1,13 @@
+# Changelog
+
+## 1.0.0 - 2023-02-19
+- Support for Laravel Nova 4
+- Added option to set image preview width
+- Reduced script size: 5.5 KiB
+- Removed logging
+- Require at least Node.js 12
+- Require PHP 7.4 or above
+
+## 0.0.2 - 2020-07-31
+
+- Made image field optional (closed [#1](https://github.com/CaddyDz/NovaPreviewResource/issues/1) thanks to Oleksandr Roskovynskyi)

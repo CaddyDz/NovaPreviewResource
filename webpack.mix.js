@@ -1,5 +1,9 @@
-let mix = require("laravel-mix");
+let mix = require('laravel-mix')
 
-mix.setPublicPath("dist")
-	.js("resources/js/field.js", "js")
-	.sass("resources/sass/field.scss", "css");
+require('./nova.mix')
+
+mix
+  .setPublicPath('dist')
+  .js('resources/js/field.js', 'js')
+  .vue({ version: 3 })
+  .nova('caddydz/nova-preview-resource')

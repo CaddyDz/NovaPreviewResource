@@ -5,9 +5,17 @@
 		"laravel",
 		"nova"
 	],
+	"authors": [
+		{
+			"name": "Salim Djerbouh",
+			"email": "caddydz4@gmail.com",
+			"homepage": "https://caddydz.github.io"
+		}
+	],
 	"license": "MIT",
 	"require": {
-		"php": ">=7.1.0"
+		"php": "^7.4|^8",
+		"laravel/nova": "^4"
 	},
 	"autoload": {
 		"psr-4": {

@@ -1,50 +1,42 @@
 <template>
 	<div :class="`text-${field.textAlign}`">
-		<tooltip trigger="hover">
-			<div class="text-primary inline-flex items-center dim cursor-pointer">
-				<span class="text-primary font-bold">{{ __("View") }}</span>
-			</div>
+		<Dropdown>
+			<DropdownTrigger class="text-gray-500 inline-flex cursor-pointer" :showArrow="false">
+				<span class="link-default font-bold">{{ __('View') }}</span>
+			</DropdownTrigger>
 
-			<tooltip-content slot="content">
-				<template v-if="image !== undefined">
-					<img :src="image" :alt="__('Photo')" />
-				</template>
-				<ul class="list-reset">
-					<li v-for="option in value" class="mb-1" :key="option">
-						<span
-							v-if="option.label"
-							class="inline-flex items-center py-1 pl-2 pr-3 rounded-full font-bold text-sm"
-						>
-							<span class="ml-1">{{ option.name }}</span>
+			<template #menu>
+				<DropdownMenu width="auto">
+					<template v-if="field.image !== undefined">
+						<img :src="field.image" :alt="__('Photo')" :width="field.width"/>
+					</template>
+					<ul v-if="field.options.length > 0" class="max-w-xxs space-y-2 py-3 px-4">
+						<li v-for="option in field.options"
+							class="mb-1 flex rounded-full font-bold text-sm leading-tight space-x-2">
+							<span class="ml-1">{{ option.name }}:</span>
 							<span class="ml-1">{{ option.label }}</span>
-						</span>
-					</li>
-				</ul>
-			</tooltip-content>
-		</tooltip>
+						</li>
+					</ul>
+					<span v-else>{{ field.noValueText }}</span>
+				</DropdownMenu>
+			</template>
+		</Dropdown>
 	</div>
 </template>
 
 <script>
+
 export default {
-	props: ["resourceName", "field"],
+	props: ["field"],
 
-	data: () => ({
-		image: "",
-		value: []
-	}),
 	created() {
-		this.image = this.field.image;
-		this.field.value = this.field.value || {};
-
-		this.value = _(this.field.options)
-			.map(o => {
-				return {
-					name: o.name,
-					label: o.label
-				};
-			})
-			.value();
+		this.field.value = this.field.value || {}
 	}
-};
+}
 </script>
+
+<style scoped>
+img {
+	display: inline;
+}
+</style>

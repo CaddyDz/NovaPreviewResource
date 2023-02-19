@@ -1,6 +1,5 @@
-Nova.booting((Vue, router, store) => {
-	Vue.component(
-		"index-nova-preview-resource",
-		require("./components/IndexField")
-	);
-});
+import IndexField from './components/IndexField'
+
+Nova.booting((app, store) => {
+	app.component('index-nova-preview-resource', IndexField)
+})

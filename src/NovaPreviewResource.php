@@ -29,7 +29,7 @@ class NovaPreviewResource extends Field
 	 *
 	 * @return $this
 	 */
-	public function image($path)
+	public function image($path): NovaPreviewResource
 	{
 		return $this->withMeta([
 			'image' => $path,
@@ -37,12 +37,26 @@ class NovaPreviewResource extends Field
 	}
 
 	/**
-	 * Set the options for the field.
+	 * Set the image width for the preview.
 	 *
-	 * @param  array|\Closure|\Illuminate\Support\Collection
+	 * @param int image width
+	 *
 	 * @return $this
 	 */
-	public function options($options)
+	public function width($width)
+	{
+		return $this->withMeta([
+			'width' => $width,
+		]);
+	}
+
+	/**
+	 * Set the options for the field.
+	 *
+	 * @param array|\Closure|\Illuminate\Support\Collection
+	 * @return $this
+	 */
+	public function options($options): NovaPreviewResource
 	{
 		if (is_callable($options)) {
 			$options = $options();
