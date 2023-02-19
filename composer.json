@@ -1,6 +1,6 @@
 {
 	"name": "caddydz/nova-preview-resource",
-	"description": "A Laravel Nova field.",
+	"description": "Preview a Laravel Nova resource via a popup on the index view",
 	"keywords": [
 		"laravel",
 		"nova"
